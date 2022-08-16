@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<packaging>jar</packaging>
+
+	<groupId>com.autocomplete</groupId>
+	<artifactId>autocomplete</artifactId>
+	<version>1.0</version>
+
+	<name>autocomplete library</name>
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+		<version.maven-compiler-plugin>3.10.1</version.maven-compiler-plugin>
+		<version.maven-jar-plugin>3.2.2</version.maven-jar-plugin>
+		<version.maven-resources-plugin>3.3.0</version.maven-resources-plugin>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<version>5.9.0</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		  <finalName>airports-search-${project.version}</finalName>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>${version.maven-resources-plugin}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${version.maven-compiler-plugin}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>${version.maven-jar-plugin}</version>
+					<configuration>
+						<archive>
+							<manifest>
+								<mainClass>com.autocomplete.main.Main</mainClass>
+							</manifest>
+						</archive>
+					</configuration>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>
